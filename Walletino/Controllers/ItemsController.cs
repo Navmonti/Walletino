@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Walletino.Domain.Entities;
 using Walletino.Services.Interface;
 
-namespace Walletino.Web.Controllers
+namespace Walletino.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]

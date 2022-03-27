@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Walletino.Core.UnitOfWork
 {
-    public interface IUnitOfWork
+    public interface IUnitOfWork : IDisposable
     {
         void SaveChange();
         void Dispose(bool disposing);

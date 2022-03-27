@@ -9,7 +9,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\Walletino.Domain\Walletino.Domain.csproj" />
+    <ProjectReference Include="..\Walletino.Services\Walletino.Services.csproj" />
   </ItemGroup>
 
 </Project>

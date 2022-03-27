@@ -22,6 +22,11 @@ namespace Walletino.DataAccess.UnitOfWork
             if (disposing) _context.Dispose();
         }
 
+        public void Dispose()
+        {
+            throw new System.NotImplementedException();
+        }
+
         #region Repositories Defination
         public GenericRepository<Account> AccountRepo { get; set; }
         public GenericRepository<Category> CategoryRepo { get; set; }

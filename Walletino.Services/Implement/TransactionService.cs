@@ -49,7 +49,7 @@ namespace Walletino.Services.Implement
             return response;
         }
 
-        public async Task<IResponse<IEnumerable<Transaction>>> GetAll(Transaction model)
+        public async Task<IResponse<IEnumerable<Transaction>>> GetAll()
         {
             var response = new Response<IEnumerable<Transaction>>();
             var call = await _unitOfWork.TransactionRepo.GetAll();

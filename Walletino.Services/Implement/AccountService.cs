@@ -49,7 +49,7 @@ namespace Walletino.Services.Implement
             return response;
         }
 
-        public async Task<IResponse<IEnumerable<Account>>> GetAll(Account model)
+        public async Task<IResponse<IEnumerable<Account>>> GetAll()
         {
             var response = new Response<IEnumerable<Account>>();
             var call = await _unitOfWork.AccountRepo.GetAll();
@@ -70,6 +70,5 @@ namespace Walletino.Services.Implement
 
             return response;
         }
-
     }
 }

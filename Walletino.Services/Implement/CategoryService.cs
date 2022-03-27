@@ -49,7 +49,7 @@ namespace Walletino.Services.Implement
             return response;
         }
 
-        public async Task<IResponse<IEnumerable<Category>>> GetAll(Category model)
+        public async Task<IResponse<IEnumerable<Category>>> GetAll()
         {
             var response = new Response<IEnumerable<Category>>();
             var call = await _unitOfWork.CategoryRepo.GetAll();
