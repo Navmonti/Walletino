@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Walletino.UnitTest", "Walle
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Walletino.Core", "Walletino.Core\Walletino.Core.csproj", "{DB4FEDEE-F464-4B21-A27F-45F99DADC433}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Walletino.Web", "Walletino.Web\Walletino.Web.csproj", "{63ACCFD3-5E10-4D9E-AD15-34361516A3A1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{DB4FEDEE-F464-4B21-A27F-45F99DADC433}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB4FEDEE-F464-4B21-A27F-45F99DADC433}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB4FEDEE-F464-4B21-A27F-45F99DADC433}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63ACCFD3-5E10-4D9E-AD15-34361516A3A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63ACCFD3-5E10-4D9E-AD15-34361516A3A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63ACCFD3-5E10-4D9E-AD15-34361516A3A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63ACCFD3-5E10-4D9E-AD15-34361516A3A1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
