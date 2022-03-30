@@ -1,11 +1,61 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="clientapp\src\components\uikit\button\Button.tsx" />
+    <None Remove="clientapp\src\components\uikit\input\Input.tsx" />
+    <None Remove="clientapp\src\pages\index.tsx" />
+    <None Remove="clientapp\src\pages\login\login.tsx" />
+    <None Remove="clientapp\src\pages\main\main.tsx" />
+    <None Remove="clientapp\src\pages\panel\panel.tsx" />
+    <None Remove="clientapp\src\services\accountService.ts" />
+    <None Remove="clientapp\src\services\categoryService.ts" />
+    <None Remove="clientapp\src\services\itemService.ts" />
+    <None Remove="clientapp\src\services\transactionService.ts" />
+    <None Remove="clientapp\src\services\userService.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="clientapp\src\asset\images\" />
+    <Folder Include="clientapp\src\components\app\" />
+    <Folder Include="clientapp\src\constants\" />
+    <Folder Include="clientapp\src\interfaces\account\" />
+    <Folder Include="clientapp\src\interfaces\category\" />
+    <Folder Include="clientapp\src\interfaces\item\" />
+    <Folder Include="clientapp\src\interfaces\user\" />
+    <Folder Include="clientapp\src\interfaces\transaction\" />
+    <Folder Include="clientapp\src\redux\" />
     <Folder Include="Controllers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="4.6.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="clientapp\src\components\uikit\button\Button.tsx" />
+    <TypeScriptCompile Include="clientapp\src\components\uikit\input\Input.tsx" />
+    <TypeScriptCompile Include="clientapp\src\pages\index.tsx" />
+    <TypeScriptCompile Include="clientapp\src\pages\login\Login.tsx">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="clientapp\src\pages\main\Main.tsx">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="clientapp\src\pages\panel\Panel.tsx">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="clientapp\src\services\accountService.ts" />
+    <TypeScriptCompile Include="clientapp\src\services\categoryService.ts" />
+    <TypeScriptCompile Include="clientapp\src\services\transactionService.ts" />
+    <TypeScriptCompile Include="clientapp\src\services\itemService.ts" />
+    <TypeScriptCompile Include="clientapp\src\services\userService.ts" />
   </ItemGroup>
 
 
