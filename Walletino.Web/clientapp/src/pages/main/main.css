@@ -81,3 +81,13 @@
     border: 1px solid #808080;
     width: 100%;
 }
+
+
+
+.add-account {
+    width: 288px;
+    height: 110px;
+    background-color: #efefef;
+    border: 2px dashed #c4c4c4;
+    color: #c4c4c4;
+}
