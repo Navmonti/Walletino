@@ -19,8 +19,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Remove="clientapp\src\components\app\account\viewAccount.tsx" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="clientapp\src\asset\images\" />
-    <Folder Include="clientapp\src\components\app\" />
     <Folder Include="clientapp\src\constants\" />
     <Folder Include="clientapp\src\interfaces\account\" />
     <Folder Include="clientapp\src\interfaces\category\" />
@@ -29,6 +32,10 @@
     <Folder Include="clientapp\src\interfaces\transaction\" />
     <Folder Include="clientapp\src\redux\" />
     <Folder Include="Controllers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="clientapp\src\components\app\account\viewAccount.tsx" />
   </ItemGroup>
 
   <ItemGroup>
