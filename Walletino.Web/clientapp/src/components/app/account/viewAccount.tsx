@@ -1,8 +1,15 @@
 ﻿import React from 'react'
+import AddViewAccount from './addViewAccount'
 
 const ViewAccount = () => {
 
-    return <h1>ViewAccount</h1>
+    return (
+        <>
+            <AddViewAccount />
+            <h1>ViewAccount</h1>
+        </>
+    )
+
 
 }
 

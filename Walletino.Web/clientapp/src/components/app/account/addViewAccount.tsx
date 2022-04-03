@@ -3,7 +3,7 @@ import './accountStyle.css'
 
 const AddViewAccount = () => {
     const navigation = useNavigate();
-    return <div className="add-account" onClick={() => { navigation(`./addAccount`) }}>
+    return <div className="add-account" onClick={() => { navigation(`/account/addAccount`) }}>
         <span className="plus">+</span>
     </div>
 
