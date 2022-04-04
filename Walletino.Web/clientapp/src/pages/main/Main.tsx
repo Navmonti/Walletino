@@ -1,5 +1,4 @@
-﻿import { Routes, Route } from 'react-router-dom';
-import { AddAccount, DeleteAccount, EditAccount, ViewAccount } from '../../components/app/account';
+﻿import { Routes, Route } from 'react-router-dom'; 
 import Account from './account';
 import './main.css'
 

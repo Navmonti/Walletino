@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <TypeScriptCompile Remove="clientapp\src\components\app\account\viewAccount.tsx" />
+    <TypeScriptCompile Remove="clientapp\src\components\app\account\comps\viewAccount.tsx" />
   </ItemGroup>
 
   <ItemGroup>
@@ -35,7 +35,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="clientapp\src\components\app\account\viewAccount.tsx" />
+    <None Include="clientapp\src\components\app\account\comps\viewAccount.tsx" />
   </ItemGroup>
 
   <ItemGroup>

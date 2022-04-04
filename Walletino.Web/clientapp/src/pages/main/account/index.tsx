@@ -10,7 +10,7 @@ const Account = () => {
                         <Route path="/" element={<ViewAccount />}></Route>
                         <Route path="addAccount" element={<AddAccount />}></Route>
                         <Route path="editAccount" element={<EditAccount />}></Route>
-                        <Route path="deleteAccunt" element={<DeleteAccount />}></Route>
+                        <Route path="deleteAccount" element={<DeleteAccount />}></Route>
                     </Routes>
                 </div>
             </div>

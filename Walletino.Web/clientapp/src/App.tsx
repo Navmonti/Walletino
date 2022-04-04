@@ -1,8 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Login, Main, Panel, Signup } from './pages';
 
-import 'bootstrap/dist/css/bootstrap.css';
-import Account from './pages/main/account';
+import 'bootstrap/dist/css/bootstrap.css'; 
 
 function App() {
     return (
