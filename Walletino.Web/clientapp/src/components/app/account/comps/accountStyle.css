@@ -81,3 +81,12 @@
     border: 1px solid #808080;
     width: 100%;
 }
+
+
+.account-card {
+    width: 288px;
+    margin: 20px auto;
+    text-align: left;
+    padding: 20px;
+    border: 2px solid #c9b2b2;
+}
