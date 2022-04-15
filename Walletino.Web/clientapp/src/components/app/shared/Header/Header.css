@@ -1,0 +1,18 @@
+﻿.header-container {
+    height: 70px;
+    text-align: center;
+    padding: 10px;
+    color: #fff;
+    background: #051721;
+    font-size: 30px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-title {
+    color : #fff;
+    font-size : 30px;
+}

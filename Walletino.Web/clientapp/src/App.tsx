@@ -1,11 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Login, Main, Panel, Signup } from './pages';
+import { Header } from './components/app/shared';
 
 import 'bootstrap/dist/css/bootstrap.css'; 
 
 function App() {
     return (
         <div className="App">
+            <Header />
             <Routes>
                 <Route path="/" element={<Main />}></Route>
                 <Route path="/*" element={<Main />}></Route>
