@@ -1,4 +1,5 @@
 ﻿import React from 'react'
+import { Button } from '../../../uikit';
 import './accountStyle.css'
 
 const AddAccount = () => {
@@ -14,7 +15,7 @@ const AddAccount = () => {
                         <input type="text" placeholder="username" className="input" />
                         <input type="password" placeholder="password" className="input" />
                         <input type="password" placeholder="confirm password" className="input" />
-                        <button className="button">Signup</button>
+                        <Button type={'default'} title={'SignUp'} loading={false} disable={false} icon={''} />
                     </div>
                 </div>
             </div>

@@ -1,3 +1,4 @@
-﻿import objButton from "../interfaces/component/IButton"
+﻿import IButton from "../interfaces/component/IButton"
+import IInput from "../interfaces/component/IInput"
 
-export { objButton } 
+export type { IButton, IInput } 

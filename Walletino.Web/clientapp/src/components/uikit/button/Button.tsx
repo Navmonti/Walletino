@@ -1,20 +1,11 @@
 ﻿import React from 'react';
-import { objButton } from '../../../interfaces';
-
-type typeButton = "default" | "add" | "edit" | "delete";
-
-interface IButton {
-    type: typeButton;
-    title: string;
-    loading: boolean;
-    disabled: boolean;
-    icon: string;
-}
-
+import { IButton } from '../../../interfaces';
 
 const Button = (props: IButton) => {
-    return <button disabled={props.disabled}
+    return <button disabled={props.disable}
             className="button">{props.title}</button>
 }
+
+
 
 export default Button;

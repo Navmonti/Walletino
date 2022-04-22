@@ -8,15 +8,15 @@ interface IButton {
     icon: string;
 }
 
-const objButton: IButton = { 
-    title: "",
-    loading: false,
-    disable: false,
-    icon: "",
-    type: "default"
-}
+//const objButton: IButton = { 
+//    title: "",
+//    loading: false,
+//    disable: false,
+//    icon: "",
+//    type: "default"
+//}
 
-export default objButton;
+export default IButton;
 
 
 

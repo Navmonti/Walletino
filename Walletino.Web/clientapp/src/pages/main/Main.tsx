@@ -9,10 +9,10 @@ const Main = () => {
             <div className="col-md-12">
                 <UserInfo />
                 <div className="card-account-holder">
-                    {/*<Routes>*/}
-                    {/*    <Route path="/" element={<Account />}></Route>  */}
-                    {/*    <Route path="account/*" element={<Account />}></Route>  */}
-                    {/*</Routes>*/}
+                    <Routes>
+                        <Route path="/" element={<Account />}></Route>  
+                        <Route path="account/*" element={<Account />}></Route>  
+                    </Routes>
                 </div>
             </div>
         </div>

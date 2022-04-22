@@ -1,4 +1,4 @@
-﻿import IButton from "../uikit/button/Button"
+﻿import Button from "../uikit/button/Button"
 
 
-export { IButton }
+export { Button }
