@@ -2,7 +2,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Login, Main, Panel, Signup } from './pages';
 import { Header } from './components/app/shared';
 
-import 'bootstrap/dist/css/bootstrap.css'; 
+import 'bootstrap/dist/css/bootstrap.css';
+import '../src/asset/styles/general.css'
 
 function App() {
     return (

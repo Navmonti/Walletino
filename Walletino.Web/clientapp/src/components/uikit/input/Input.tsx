@@ -1,9 +1,16 @@
 ﻿import React from 'react';
 import { IInput } from '../../../interfaces';
-
+import './Input.css'
 const Input = (props: IInput) => {
-    return <button disabled={props.disable}
-        className="button">{props.title}</button>
+    return (
+        <div className="input-holder">
+            <div className="input-header">
+                <span className="input-label">{props.title}</span>
+                {props.required ? <span className="required">*</span> : <></>}
+            </div>
+            <input className="input" type={props.title} placeholder={props.placeholder} onChange={(event) => { props.onChange(event, props.key) }} />
+            {props.description ? <span className="input-description">{props.description}</span> : <></>}
+        </div>)
 }
 
 

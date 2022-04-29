@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Walletino.Core.Repository;
 using Walletino.DataAccess.Database;
@@ -31,7 +32,7 @@ namespace Walletino.DataAccess.Repository
 
         public async Task<T> Update(T entity)
         {
-           _entity.Update(entity);
+            _entity.Update(entity);
             return entity;
         }
 
@@ -47,15 +48,15 @@ namespace Walletino.DataAccess.Repository
             _entity.Remove(entity);
             return entity;
         }
-
+ 
         public async Task<IEnumerable<T>> GetAll()
         {
             return await _entity.ToListAsync();
         }
 
-        public async Task<T> GetById(int id)
+        public Task<T> GetById(int id)
         {
-            return await _entity.FindAsync(id);
+            throw new System.NotImplementedException();
         }
     }
 }

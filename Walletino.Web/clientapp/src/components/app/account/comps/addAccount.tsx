@@ -15,7 +15,9 @@ const AddAccount = () => {
                         <input type="text" placeholder="username" className="input" />
                         <input type="password" placeholder="password" className="input" />
                         <input type="password" placeholder="confirm password" className="input" />
-                        <Button type={'default'} title={'SignUp'} loading={false} disable={false} icon={''} />
+                        <Button type={'default'} title={'SignUp'} loading={false} disable={false} icon={''} onClick={function() {
+                            throw new Error('Function not implemented.');
+                        } } />
                     </div>
                 </div>
             </div>

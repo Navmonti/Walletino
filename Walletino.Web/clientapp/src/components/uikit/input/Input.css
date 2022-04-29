@@ -1,10 +1,43 @@
-﻿
-.input {
-    border: 1px solid #708090;
-    background-color: #efefef;
-    width: 288px;
-    height: 50px;
-    margin: 10px;
-    padding: 0 12px 0 16px;
-    border-radius: 5px;
+﻿.input-holder {
+    margin: 5px auto 10px;
 }
+
+    .input-holder .input-header {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        justify-content: flex-start;
+    }
+
+        .input-holder .input-header .input-label {
+            font-size: 15px;
+            font-weight: 600;
+            color: #708090;
+            padding-left: 12px;
+        }
+
+        .input-holder .input-header .required {
+            color: red;
+            font-size:15px;
+            font-weight: 700;
+            margin-left: 5px
+        }
+
+    .input-holder .input {
+        border: 1px solid #708090;
+        background-color: #efefef;
+        width: 288px;
+        height: 50px;
+        border-radius: 5px;
+        margin: 5px auto 0px;
+        padding: 0 12px 0 16px;
+    }
+
+    .input-holder .input-description {
+        color: red;
+        font-size: 10px;
+        margin-left: 5px
+    }
+
+

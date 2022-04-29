@@ -6,6 +6,7 @@ interface IButton {
     loading: boolean;
     disable: boolean;
     icon: string;
+    onClick: () => any
 }
 
 //const objButton: IButton = { 

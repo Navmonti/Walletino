@@ -33,6 +33,7 @@ namespace Walletino.DataAccess.UnitOfWork
         public GenericRepository<Item> ItemRepo { get; set; }
         public GenericRepository<Transaction> TransactionRepo { get; set; }
         public GenericRepository<User> UserRepo { get; set; }
+        public GenericRepository<User> AuthRepo { get; set; }
 
         #endregion
 

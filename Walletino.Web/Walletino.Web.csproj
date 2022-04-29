@@ -5,6 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Controllers\**" />
+    <Content Remove="Controllers\**" />
+    <EmbeddedResource Remove="Controllers\**" />
+    <None Remove="Controllers\**" />
+    <TypeScriptCompile Remove="Controllers\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="clientapp\src\components\uikit\button\Button.tsx" />
     <None Remove="clientapp\src\components\uikit\input\Input.tsx" />
     <None Remove="clientapp\src\pages\index.tsx" />
@@ -24,14 +32,14 @@
 
   <ItemGroup>
     <Folder Include="clientapp\src\asset\images\" />
-    <Folder Include="clientapp\src\constants\" />
     <Folder Include="clientapp\src\interfaces\account\" />
     <Folder Include="clientapp\src\interfaces\category\" />
     <Folder Include="clientapp\src\interfaces\item\" />
     <Folder Include="clientapp\src\interfaces\user\" />
     <Folder Include="clientapp\src\interfaces\transaction\" />
-    <Folder Include="clientapp\src\redux\" />
-    <Folder Include="Controllers\" />
+    <Folder Include="clientapp\src\redux\action\" />
+    <Folder Include="clientapp\src\redux\store\" />
+    <Folder Include="clientapp\src\redux\reducer\" />
   </ItemGroup>
 
   <ItemGroup>

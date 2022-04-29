@@ -8,6 +8,7 @@ namespace Walletino.DataAccess.Database
         public WalletinoDbContext(DbContextOptions options) : base(options)
         {
 
+
         }
 
         public DbSet<Account> Accounts { get; set; }    

@@ -1,0 +1,54 @@
+﻿.page-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: calc(100vh - 70px);
+}
+
+.sperator {
+    border: 1px solid #808080;
+    width: 100%;
+}
+
+/*#region Card*/
+
+.card-holder {
+    border: 2px solid #708090;
+    padding: 20px 10px;
+    margin: auto;
+    position: relative;
+    border-radius: 10px;
+}
+
+    .card-holder .card-header {
+        position: relative;
+        width: 100%;
+        margin: auto;
+        text-align: center;
+        color: #708090;
+        background-color: transparent;
+        border: none;
+    }
+
+    .card-holder .card-content {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    .card-holder .card-footer {
+        background-color: transparent;
+        border: none;
+    }
+
+/*#endregion RegionName*/
+
+.button-holder {
+    text-align:center
+}
