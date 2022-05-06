@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -11,6 +12,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Walletino.Core.UnitOfWork;
+using Walletino.DataAccess.Database;
+using Walletino.DataAccess.UnitOfWork;
 using Walletino.Services.Implement;
 using Walletino.Services.Interface;
 
@@ -28,14 +32,19 @@ namespace Walletino
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddControllers();
+
+            services.AddDbContext<WalletinoDbContext>(option => option.UseSqlServer(Configuration.GetConnectionString("WallentinoConnection")));
+
+            services.AddScoped<UnitOfWork>();
+
             services.AddScoped<IAccountService, AccountService>();
-            services.AddScoped<IAuthService, AuthService>();
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IItemService, ItemService>();
             services.AddScoped<ITransactionService, TransactionService>();
             services.AddScoped<IUserService, UserService>();
 
-            services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Walletino", Version = "v1" });

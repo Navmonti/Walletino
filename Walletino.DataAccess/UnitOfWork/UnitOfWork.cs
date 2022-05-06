@@ -13,6 +13,72 @@ namespace Walletino.DataAccess.UnitOfWork
             _context = context;
         }
 
+        private AccountRepository _accountRepo { get; set; }
+        private CategoryRepository _categoryRepo { get; set; }
+        private ItemRepository _itemRepo { get; set; }
+        private TransactionRepository _transactionRepo { get; set; }
+        private UserRepository _userRepo { get; set; }
+
+
+        public AccountRepository AccountRepo
+        {
+            get
+            {
+                if (_accountRepo == null)
+                {
+                    _accountRepo = new AccountRepository(_context);
+                }
+                return _accountRepo;
+            }
+        }
+
+        public CategoryRepository CategoryRepo
+        {
+            get
+            {
+                if (_categoryRepo == null)
+                {
+                    _categoryRepo = new CategoryRepository(_context);
+                }
+                return _categoryRepo;
+            }
+        }
+
+        public ItemRepository ItemRepo
+        {
+            get
+            {
+                if (_itemRepo == null)
+                {
+                    _itemRepo = new ItemRepository(_context);
+                }
+                return _itemRepo;
+            }
+        }
+
+        public TransactionRepository TransactionRepo
+        {
+            get
+            {
+                if (_transactionRepo == null)
+                {
+                    _transactionRepo = new TransactionRepository(_context);
+                }
+                return _transactionRepo;
+            }
+        }
+        
+        public UserRepository UserRepo
+        {
+            get
+            {
+                if (_userRepo == null)
+                {
+                    _userRepo = new UserRepository(_context);
+                }
+                return _userRepo;
+            }
+        }
         public void SaveChange()
         {
             _context.SaveChanges();
@@ -24,18 +90,10 @@ namespace Walletino.DataAccess.UnitOfWork
 
         public void Dispose()
         {
-            throw new System.NotImplementedException();
+            _context.Dispose();
         }
 
-        #region Repositories Defination
-        public GenericRepository<Account> AccountRepo { get; set; }
-        public GenericRepository<Category> CategoryRepo { get; set; }
-        public GenericRepository<Item> ItemRepo { get; set; }
-        public GenericRepository<Transaction> TransactionRepo { get; set; }
-        public GenericRepository<User> UserRepo { get; set; }
-        public GenericRepository<User> AuthRepo { get; set; }
 
-        #endregion
 
     }
 }

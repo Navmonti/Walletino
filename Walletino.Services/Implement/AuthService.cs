@@ -12,12 +12,5 @@ namespace Walletino.Services.Implement
         {
             _unitOfWork = unitOfWork;
         }
-
-        //public async IResponse<User> Login(string username , string password) {
-            
-        //    var response = new Response<User> ();
-        //    //return await _unitOfWork.AuthRepo.GetAll();
-        //    return null;
-        //}
     }
 }

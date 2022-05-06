@@ -5,7 +5,7 @@ namespace Walletino.DataAccess.Database
 {
     public class WalletinoDbContext : DbContext
     {
-        public WalletinoDbContext(DbContextOptions options) : base(options)
+        public WalletinoDbContext(DbContextOptions<WalletinoDbContext> options) : base(options)
         {
 
 
