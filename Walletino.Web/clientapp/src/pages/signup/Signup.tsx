@@ -54,22 +54,22 @@ const Signup = () => {
                         <hr className="sperator" />
                         <div className="row">
                             <div className="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                <Input title={'Firstname'} placeholder={'Please Enter Firstname (optional)'} disable={false} required={false} description={''} type={'text'} theme={'light'} onChange={(event) => _handleOnChange(event, "firstname")} key={"firstname"} />
+                                <Input title={'Firstname'} placeholder={'Please Enter Firstname (optional)'} disable={false} required={false} description={''} type={'text'} theme={'light'} onChange={(event: any) => _handleOnChange(event, "firstname")} key={"firstname"} />
                             </div>
                             <div className="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                <Input title={'Lastname'} placeholder={'Please Enter Lastname (optional)'} disable={false} required={false} description={''} type={'text'} theme={'light'} onChange={(event) => _handleOnChange(event, "lastname")} key={"lastname"} />
+                                <Input title={'Lastname'} placeholder={'Please Enter Lastname (optional)'} disable={false} required={false} description={''} type={'text'} theme={'light'} onChange={(event: any) => _handleOnChange(event, "lastname")} key={"lastname"} />
                             </div>
                             <div className="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                <Input title={'Email'} placeholder={'Please Enter Email'} disable={false} required={true} description={''} type={'text'} theme={'light'} onChange={(event) => _handleOnChange(event, "email")} key={"email"} />
+                                <Input title={'Email'} placeholder={'Please Enter Email'} disable={false} required={true} description={''} type={'text'} theme={'light'} onChange={(event :any) => _handleOnChange(event, "email")} key={"email"} />
                             </div>
                             <div className="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                <Input title={'Username'} placeholder={'Please Enter Username'} disable={false} required={true} description={''} type={'text'} theme={'light'} onChange={(event) => _handleOnChange(event, "username")} key={"username"} />
+                                <Input title={'Username'} placeholder={'Please Enter Username'} disable={false} required={true} description={''} type={'text'} theme={'light'} onChange={(event: any) => _handleOnChange(event, "username")} key={"username"} />
                             </div>
                             <div className="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                <Input title={'Password'} placeholder={'Please Enter Password'} disable={false} required={true} description={''} type={'password'} theme={'light'} onChange={(event) => _handleOnChange(event, "password")} key={"password"} />
+                                <Input title={'Password'} placeholder={'Please Enter Password'} disable={false} required={true} description={''} type={'password'} theme={'light'} onChange={(event: any) => _handleOnChange(event, "password")} key={"password"} />
                             </div>
                             <div className="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                <Input title={'Confirm password'} placeholder={'Please Enter Confirm password'} disable={false} required={true} description={''} type={'password'} theme={'light'} onChange={(event) => _handleOnChange(event, "confirmPassword")} key={"confirmPassword"} />
+                                <Input title={'Confirm password'} placeholder={'Please Enter Confirm password'} disable={false} required={true} description={''} type={'password'} theme={'light'} onChange={(event: any) => _handleOnChange(event, "confirmPassword")} key={"confirmPassword"} />
                             </div>
                         </div>
                         <hr className="sperator" />

@@ -2,27 +2,24 @@
 import axios from "../constants/network"
 import { ILogin, ISignup } from '../interfaces/user'
 
+export default class AuthService {
+    static async login(dataset: ILogin) {
+        const result : string = axios.get(`${addresses.Auth_login}/${dataset.username}/${dataset.password}`);
+        return result;
+    }
 
-const AuthService = () => {
-    const login = async (dataset: ILogin) => {
+    static async signup(dataset: ISignup) {
         var result = axios.get(`${addresses.Auth_login}/${dataset.username}/${dataset.password}`);
         return result;
     }
 
-    const signup = async (dataset: ISignup) => {
-        var result = axios.get(`${addresses.Auth_login}/${dataset.username}/${dataset.password}`);
-        return result;
-    }
-
-    const logout = async () => {
+    static async logout() {
         var result = axios.get(`${addresses.Auth_signup}`);
         return result;
     }
 
-    const refereshToken = async () => {
+    static async refereshToken() {
         var result = axios.get(`${addresses.Auth_refreshToken}`);
         return result;
     }
-}
-
-export default AuthService;
+} 

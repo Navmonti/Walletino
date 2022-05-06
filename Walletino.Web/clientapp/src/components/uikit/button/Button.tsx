@@ -1,5 +1,4 @@
-﻿import React from 'react';
-import { IButton } from '../../../interfaces';
+﻿import { IButton } from '../../../interfaces/component';
 import './Button.css'
 
 const Button = (props: IButton) => {

@@ -1,8 +1,13 @@
 ﻿import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { Button , Input } from '../../components/uikit';
+import AuthService from '../../services/authService';
 import './login.css' 
 
 const Login = () => {
+
+    //hooks
+    const dispatch = useDispatch();
 
     //variable
     const [username, setUsername] = useState("")
@@ -26,7 +31,9 @@ const Login = () => {
 
     const _handleLoginOnClick = () => { }
 
-    const _handleSignUpOnClick = () => { }
+    const _handleSignUpOnClick = async () => {
+        //await dispatch(await AuthService.login('navid','123456')) 
+    }
 
     return <div className="container page-content">
         <div className="row">
@@ -37,8 +44,8 @@ const Login = () => {
                     </div>
                     <div className="card-content">
                         <hr className="sperator" />
-                        <Input placeholder={'Please Enter Username'} title={'Username'} disable={false} required={true} description={''} type={'text'} theme={'light'} onChange={(event) => _handleOnChange(event, "username")} key={"username"}/>
-                        <Input placeholder={'Please Enter Password'} title={'Password'} disable={false} required={true} description={''} type={'password'} theme={'light'} onChange={(event) => _handleOnChange(event, "password")} key={"password"}/>
+                        <Input placeholder={'Please Enter Username'} title={'Username'} disable={false} required={true} description={''} type={'text'} theme={'light'} onChange={(event: any) => _handleOnChange(event, "username")} key={"username"}/>
+                        <Input placeholder={'Please Enter Password'} title={'Password'} disable={false} required={true} description={''} type={'password'} theme={'light'} onChange={(event: any) => _handleOnChange(event, "password")} key={"password"}/>
                         <Button onClick={() => _handleLoginOnClick()} type={'default'} title={'Login'} loading={false} disable={false} icon={''} />
                         <hr className="sperator" />
                     </div>

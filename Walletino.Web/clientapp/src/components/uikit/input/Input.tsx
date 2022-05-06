@@ -1,5 +1,4 @@
-﻿import React from 'react';
-import { IInput } from '../../../interfaces';
+﻿import { IInput } from '../../../interfaces/component';
 import './Input.css'
 const Input = (props: IInput) => {
     return (

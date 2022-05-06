@@ -37,9 +37,6 @@
     <Folder Include="clientapp\src\interfaces\item\" />
     <Folder Include="clientapp\src\interfaces\user\" />
     <Folder Include="clientapp\src\interfaces\transaction\" />
-    <Folder Include="clientapp\src\redux\action\" />
-    <Folder Include="clientapp\src\redux\store\" />
-    <Folder Include="clientapp\src\redux\reducer\" />
   </ItemGroup>
 
   <ItemGroup>
