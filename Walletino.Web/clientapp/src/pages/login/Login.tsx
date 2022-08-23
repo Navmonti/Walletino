@@ -17,7 +17,6 @@ const Login = () => {
     type variableTypes = "username" | "password"
 
     const _handleOnChange = (event: any, type: variableTypes) => {
-        debugger;
         var value = event.current;
         switch (type) {
             case 'username':
@@ -29,10 +28,12 @@ const Login = () => {
         }
     }
 
-    const _handleLoginOnClick = () => { }
+    const _handleLoginOnClick = async () => {
+
+    }
 
     const _handleSignUpOnClick = async () => {
-        //await dispatch(await AuthService.login('navid','123456')) 
+         
     }
 
     return <div className="container page-content">

@@ -5,7 +5,16 @@ interface IUser {
     username: string,
     password: string, 
     mobile: string,
-    email: string ,
+    email: string,
+
+    isLoading: false,
+    isDisable: false,
+
+    isSuccessful: false,
+    succeessfulMessage: '',
+
+    isError: false,
+    errorMessage: '',
 }
 
 export default IUser;

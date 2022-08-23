@@ -19,11 +19,6 @@
     <None Remove="clientapp\src\pages\login\login.tsx" />
     <None Remove="clientapp\src\pages\main\main.tsx" />
     <None Remove="clientapp\src\pages\panel\panel.tsx" />
-    <None Remove="clientapp\src\services\accountService.ts" />
-    <None Remove="clientapp\src\services\categoryService.ts" />
-    <None Remove="clientapp\src\services\itemService.ts" />
-    <None Remove="clientapp\src\services\transactionService.ts" />
-    <None Remove="clientapp\src\services\userService.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -63,11 +58,6 @@
     <TypeScriptCompile Include="clientapp\src\pages\panel\Panel.tsx">
       <SubType>Code</SubType>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="clientapp\src\services\accountService.ts" />
-    <TypeScriptCompile Include="clientapp\src\services\categoryService.ts" />
-    <TypeScriptCompile Include="clientapp\src\services\transactionService.ts" />
-    <TypeScriptCompile Include="clientapp\src\services\itemService.ts" />
-    <TypeScriptCompile Include="clientapp\src\services\userService.ts" />
   </ItemGroup>
 
 

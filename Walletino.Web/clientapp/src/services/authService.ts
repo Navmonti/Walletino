@@ -4,7 +4,7 @@ import { ILogin, ISignup } from '../interfaces/user'
 
 export default class AuthService {
     static async login(dataset: ILogin) {
-        const result : string = axios.get(`${addresses.Auth_login}/${dataset.username}/${dataset.password}`);
+        const result = axios.get(`${addresses.Auth_login}/${dataset.username}/${dataset.password}`);
         return result;
     }
 
