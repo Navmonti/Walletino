@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31205.134
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Walletino", "Walletino\Walletino.csproj", "{59804226-3114-45E8-9658-3AC690266856}"
 EndProject
@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Walletino.UnitTest", "Walle
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Walletino.Core", "Walletino.Core\Walletino.Core.csproj", "{DB4FEDEE-F464-4B21-A27F-45F99DADC433}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Walletino.Web", "Walletino.Web\Walletino.Web.csproj", "{63ACCFD3-5E10-4D9E-AD15-34361516A3A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Walletino.Web", "Walletino.Web\Walletino.Web.csproj", "{63ACCFD3-5E10-4D9E-AD15-34361516A3A1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

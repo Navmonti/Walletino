@@ -1,12 +1,13 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Walletino.ActionFilters;
 using Walletino.Domain.Entities;
 using Walletino.Services.Interface;
 
 namespace Walletino.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
+    [Authentication]
+    [Route("[controller]/[action]")]
     public class ItemsController : ControllerBase
     {
         private readonly IItemService _itemService;

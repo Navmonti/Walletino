@@ -1,12 +1,13 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Walletino.ActionFilters;
 using Walletino.Domain.Entities;
 using Walletino.Services.Interface;
 
 namespace Walletino.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
+    [Authentication]
+    [Route("[controller]/[action]")]
     public class AccountsController : ControllerBase
     {
         private readonly IAccountService _accountService;
@@ -29,5 +30,8 @@ namespace Walletino.Controllers
 
         [HttpGet("id")]
         public async Task<IActionResult> GetById(int accountId) => Ok(await _accountService.GetById(accountId));
+
+        [HttpGet("userId")]
+        public async Task<IActionResult> GetByUserId(int userId) => Ok(await _accountService.GetByUserId(userId));
     }
 }

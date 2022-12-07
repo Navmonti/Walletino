@@ -70,5 +70,16 @@ namespace Walletino.Services.Implement
 
             return response;
         }
+
+        public async Task<IResponse<Account>> GetByUserId(int userId)
+        {
+            var response = new Response<Account>();
+            var call = await _unitOfWork.AccountRepo.GetByUserId(userId);
+            response.Result = call;
+            response.Message = "Done";
+            response.IsSuccess = true;
+
+            return response;
+        }
     }
 }

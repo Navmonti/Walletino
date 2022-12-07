@@ -52,7 +52,7 @@ namespace Walletino.Services.Implement
         public async Task<IResponse<IEnumerable<Item>>> GetAll()
         {
             var response = new Response<IEnumerable<Item>>();
-            var call = await _unitOfWork.ItemRepo.GetAll();
+            var call = await _unitOfWork.ItemRepo.GetAllItemsByUser();
             response.Result = call;
             response.Message = "Done";
             response.IsSuccess = true;

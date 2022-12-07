@@ -18,6 +18,9 @@ namespace Walletino.Services.Implement
         public async Task<IResponse<Transaction>> Add(Transaction model)
         {
             var response = new Response<Transaction>();
+            var entity = new Transaction() { 
+            
+            };
             var call = await _unitOfWork.TransactionRepo.Add(model);
             response.Result = call;
             response.Message = "Done";
@@ -64,6 +67,17 @@ namespace Walletino.Services.Implement
         {
             var response = new Response<Transaction>();
             var call = await _unitOfWork.TransactionRepo.GetById(transactionId);
+            response.Result = call;
+            response.Message = "Done";
+            response.IsSuccess = true;
+
+            return response;
+        }
+
+        public async Task<IResponse<Transaction>> GetByAccountId(int accountId)
+        {
+            var response = new Response<Transaction>();
+            var call = await _unitOfWork.TransactionRepo.GetByAccountId(accountId);
             response.Result = call;
             response.Message = "Done";
             response.IsSuccess = true;

@@ -12,5 +12,6 @@ namespace Walletino.Services.Interface
         Task<IResponse<Transaction>> Delete(int transactionId);
         Task<IResponse<IEnumerable<Transaction>>> GetAll();
         Task<IResponse<Transaction>> GetById(int transactionId);
+        Task<IResponse<Transaction>> GetByAccountId(int accountId);
     }
 }

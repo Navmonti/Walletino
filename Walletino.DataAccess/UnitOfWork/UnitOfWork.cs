@@ -31,7 +31,6 @@ namespace Walletino.DataAccess.UnitOfWork
                 return _accountRepo;
             }
         }
-
         public CategoryRepository CategoryRepo
         {
             get
@@ -43,7 +42,6 @@ namespace Walletino.DataAccess.UnitOfWork
                 return _categoryRepo;
             }
         }
-
         public ItemRepository ItemRepo
         {
             get
@@ -55,7 +53,6 @@ namespace Walletino.DataAccess.UnitOfWork
                 return _itemRepo;
             }
         }
-
         public TransactionRepository TransactionRepo
         {
             get
@@ -67,7 +64,6 @@ namespace Walletino.DataAccess.UnitOfWork
                 return _transactionRepo;
             }
         }
-        
         public UserRepository UserRepo
         {
             get
@@ -79,6 +75,7 @@ namespace Walletino.DataAccess.UnitOfWork
                 return _userRepo;
             }
         }
+
         public void SaveChange()
         {
             _context.SaveChanges();
@@ -87,7 +84,6 @@ namespace Walletino.DataAccess.UnitOfWork
         {
             if (disposing) _context.Dispose();
         }
-
         public void Dispose()
         {
             _context.Dispose();

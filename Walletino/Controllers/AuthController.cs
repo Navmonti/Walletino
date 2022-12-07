@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using Walletino.Domain.Dtos;
 using Walletino.Services.Interface;
 
 namespace Walletino.Controllers
@@ -16,21 +17,21 @@ namespace Walletino.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Login() {
-            return null;
+        public async Task<IActionResult> Login(string username, string Password)
+        {
+            return Ok(await _authService.LoginAsync(username, Password));
         }
 
-
-        [HttpGet]
-        public async Task<IActionResult> Signup()
+        [HttpPost]
+        public async Task<IActionResult> SignUp(UserDto user)
         {
-            return null;
+            return Ok(await _authService.SignupAsync(user));
         }
 
-        [HttpGet]
-        public async Task<IActionResult> RefreshToken()
+        [HttpPost]
+        public async Task<IActionResult> GenerateToken(int userId)
         {
-            return null;
+            return Ok(await _authService.GenerateToken(userId));
         }
     }
 }

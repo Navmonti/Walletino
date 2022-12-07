@@ -22,7 +22,9 @@ namespace Walletino.DataAccess.Migrations
             modelBuilder.Entity("Walletino.Domain.Entities.Account", b =>
                 {
                     b.Property<int>("AccountId")
-                        .HasColumnType("int");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("AccountNumber")
                         .HasColumnType("nvarchar(max)");
@@ -46,6 +48,8 @@ namespace Walletino.DataAccess.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("AccountId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Accounts");
                 });
@@ -80,7 +84,9 @@ namespace Walletino.DataAccess.Migrations
             modelBuilder.Entity("Walletino.Domain.Entities.Item", b =>
                 {
                     b.Property<int>("ItemId")
-                        .HasColumnType("int");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
@@ -100,12 +106,14 @@ namespace Walletino.DataAccess.Migrations
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("UserId")
+                    b.Property<int?>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("ItemId");
 
                     b.HasIndex("CategoryId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Items");
                 });
@@ -116,6 +124,9 @@ namespace Walletino.DataAccess.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("AccountId")
+                        .HasColumnType("int");
 
                     b.Property<int>("CreateBy")
                         .HasColumnType("int");
@@ -140,6 +151,8 @@ namespace Walletino.DataAccess.Migrations
 
                     b.HasKey("TransactionId");
 
+                    b.HasIndex("AccountId");
+
                     b.ToTable("Transactions");
                 });
 
@@ -160,6 +173,13 @@ namespace Walletino.DataAccess.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Firstname")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<byte>("Gender")
+                        .HasColumnType("tinyint");
+
+                    b.Property<string>("Lastname")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("ModifiedBy")
@@ -180,11 +200,7 @@ namespace Walletino.DataAccess.Migrations
                     b.Property<string>("SaltPassword")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("lastname")
+                    b.Property<string>("Username")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("UserId");
@@ -196,7 +212,7 @@ namespace Walletino.DataAccess.Migrations
                 {
                     b.HasOne("Walletino.Domain.Entities.User", "User")
                         .WithMany("Accounts")
-                        .HasForeignKey("AccountId")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -213,13 +229,27 @@ namespace Walletino.DataAccess.Migrations
 
                     b.HasOne("Walletino.Domain.Entities.User", "User")
                         .WithMany("Items")
-                        .HasForeignKey("ItemId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UserId");
 
                     b.Navigation("Category");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Walletino.Domain.Entities.Transaction", b =>
+                {
+                    b.HasOne("Walletino.Domain.Entities.Account", "Account")
+                        .WithMany("Transactions")
+                        .HasForeignKey("AccountId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Account");
+                });
+
+            modelBuilder.Entity("Walletino.Domain.Entities.Account", b =>
+                {
+                    b.Navigation("Transactions");
                 });
 
             modelBuilder.Entity("Walletino.Domain.Entities.Category", b =>
