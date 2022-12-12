@@ -41,6 +41,14 @@ namespace Walletino.Services.Implement
         public async Task<IResponse<User>> Delete(int userId)
         {
             var response = new Response<User>();
+            var user = _unitOfWork.UserRepo.GetById(userId);
+            if (user == null) return new Response<User>()
+            {
+                IsSuccess = false,
+                Message = "User Not Found",
+                Result = null
+            };
+
             var call = await _unitOfWork.UserRepo.Delete(userId);
             response.Result = call;
             response.Message = "Done";
@@ -63,8 +71,14 @@ namespace Walletino.Services.Implement
         public async Task<IResponse<User>> GetById(int userId)
         {
             var response = new Response<User>();
-            var call = await _unitOfWork.UserRepo.GetById(userId);
-            response.Result = call;
+            var user =await _unitOfWork.UserRepo.GetById(userId);
+            if (user == null) return new Response<User>()
+            {
+                IsSuccess = false,
+                Message = "User Not Found",
+                Result = null
+            };
+            response.Result = user;
             response.Message = "Done";
             response.IsSuccess = true;
 

@@ -54,9 +54,10 @@ namespace Walletino.DataAccess.Repository
             return await _entity.ToListAsync();
         }
 
-        public Task<T> GetById(int id)
+        public async Task<T> GetById(int id)
         {
-            throw new System.NotImplementedException();
+            var entity = await _entity.FindAsync(id);
+            return entity;
         }
     }
 }

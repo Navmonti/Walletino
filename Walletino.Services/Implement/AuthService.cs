@@ -58,7 +58,7 @@ namespace Walletino.Services.Implement
                     Firstname = model.Firstname,
                     Gender = model.Gender,
                     UserId = model.UserId,
-                    Password = GetStringSha256Hash(model.Password),
+                    Password = GetStringSha256Hash(model.Password)
                 };
 
                 _unitOfWork.UserRepo.Add(user);
@@ -67,7 +67,7 @@ namespace Walletino.Services.Implement
                 return await GenerateToken(user.UserId);
             }
             catch (Exception ex)
-            { 
+            {
                 throw ex;
             }
 
@@ -78,21 +78,23 @@ namespace Walletino.Services.Implement
         {
             try
             {
-                var tokenHandler = new JwtSecurityTokenHandler();
                 var user = await _unitOfWork.UserRepo.GetUserByUserId(userId);
+                if (user == null) throw new Exception("user not exist");
+                var tokenHandler = new JwtSecurityTokenHandler();
                 var issuer = _configuration["Jwt:Issuer"];
                 var audience = _configuration["Jwt:Audience"];
                 var expired = DateTime.UtcNow.AddMinutes(5);
                 var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:key"]));
                 var credential = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+
                 var claims = new[]
-                {
-                    new Claim("UserId" , user.UserId.ToString()),
-                    new Claim("Firstname", user.Firstname),
-                    new Claim("Lastname", user.Lastname),
-                    new Claim("Email", user.Email),
-                    new Claim("Username", user.Username),
-                };
+                  {
+                      new Claim("UserId" , user.UserId.ToString()),
+                      new Claim("Firstname", user.Firstname),
+                      new Claim("Lastname", user.Lastname),
+                      new Claim("Email", user.Email),
+                      new Claim("Username", user.Username),
+                  };
                 var key = Encoding.ASCII.GetBytes(_configuration["Jwt:Key"]);
                 var token = new JwtSecurityToken(claims: claims, expires: expired, signingCredentials: credential);
                 var stringToken = tokenHandler.WriteToken(token);
@@ -102,7 +104,7 @@ namespace Walletino.Services.Implement
                 return stringToken;
             }
             catch (Exception ex)
-            { 
+            {
                 throw ex;
             }
 
