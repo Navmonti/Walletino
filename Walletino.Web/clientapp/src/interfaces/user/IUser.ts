@@ -1,5 +1,6 @@
 ﻿
 interface IUser {
+    userId: number,
     lastname : string ,
     firstname : string ,
     username: string,
@@ -7,14 +8,14 @@ interface IUser {
     mobile: string,
     email: string,
 
-    isLoading: false,
-    isDisable: false,
+    //isLoading: false,
+    //isDisable: false,
 
-    isSuccessful: false,
-    succeessfulMessage: '',
+    //isSuccessful: false,
+    //succeessfulMessage: '',
 
-    isError: false,
-    errorMessage: '',
+    //isError: false,
+    //errorMessage: '',
 }
 
 export default IUser;

@@ -5,11 +5,11 @@ import type { RootState } from '../../redux/store'
 
 const initialState: ISignup = {
     firstname: 'Ali',
-    lastname: '',
-    email: '',
-    username: '',
-    password: '',
-    confirmPassword: ''
+    lastname: 'Nategh',
+    email: 'a.nategh@asax.ir',
+    username: 'a.nategh',
+    password: '12345aA',
+    confirmPassword: '12345aA'
 }
 
 
