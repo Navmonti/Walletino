@@ -1,7 +1,7 @@
 ﻿import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Button, Input } from '../../components/uikit';
-import { useAppDispatch, useAppSelector } from '../../hooks';
+ 
 import { ISignup } from '../../interfaces/user';
 import { signupAction } from './../../redux/slice/signupSlice'
 import './signup.css'

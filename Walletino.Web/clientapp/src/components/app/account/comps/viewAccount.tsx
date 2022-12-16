@@ -1,6 +1,7 @@
 ﻿import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { IAccount } from '../../../../interfaces/account';
 import { GetAllAccount } from '../../../../redux/action/accountActions';
 
 import './accountStyle.css'
@@ -8,8 +9,8 @@ import './accountStyle.css'
 const ViewAccount = () => {
     const navigation = useNavigate();
     const dispatch = useDispatch();
-    const state = useSelector(state => state);
-    debugger;
+    const account = useSelector((state: IAccount) => state);
+
     useEffect(() => {
         GetAllAccount();
     }, [])

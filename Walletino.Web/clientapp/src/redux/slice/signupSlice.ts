@@ -1,7 +1,6 @@
 ﻿import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { sliceNames } from '../../constants/file'
 import { ISignup } from '../../interfaces/user'
-import type { RootState } from '../../redux/store'
 
 const initialState: ISignup = {
     firstname: 'Ali',

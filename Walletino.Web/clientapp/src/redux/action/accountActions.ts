@@ -29,7 +29,6 @@ const RemoveAccount = (id: number) => {
 
 const GetAllAccount = async () => {
     var result = await accountService.getAll();
-    debugger;
     return {
         type: Actions.GETALL_ACCOUNT,
         payload: result
