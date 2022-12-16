@@ -16,10 +16,5 @@ export default class AuthService {
     static async logout() {
         var result = axios.get(`${addresses.Auth_signup}`);
         return result;
-    }
-
-    static async refereshToken() {
-        var result = axios.get(`${addresses.Auth_refreshToken}`);
-        return result;
-    }
+    } 
 } 

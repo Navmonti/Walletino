@@ -7,8 +7,8 @@ import { signupAction } from './../../redux/slice/signupSlice'
 import './signup.css'
 
 const Signup = () => {
-    const signup = useAppSelector((state) => state.signup)
-    const dispatch = useAppDispatch();
+    //const signup = useAppSelector((state) => state.signup)
+    //const dispatch = useAppDispatch();
 
     //variable
     const [firstname, setFirstname] = useState("")
@@ -57,7 +57,7 @@ const Signup = () => {
         //    confirmPassword: confirmPassword
         //}
         debugger;
-        dispatch(signupAction({ firstname }))
+        /*dispatch(signupAction({ firstname }))*/
         console.log(user)
 
   

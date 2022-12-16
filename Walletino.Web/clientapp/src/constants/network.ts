@@ -2,7 +2,7 @@
 import config from "../constants/config";
 
 const customAxios = axios.create({
-    baseURL: `${config}/api`,
+    baseURL: `${config.apiAddress}/api`,
     timeout: 10000,
     headers: { 'api-key': 'eyJz-CI6Ikp-4pWY-lhdCI6' }
 });
@@ -12,7 +12,7 @@ const requestHandler = (request: any) => {
     return request;
 };
 
-const responseHandler = (response:any) => {
+const responseHandler = (response: any) => {
     //if (response.status === 401) {
     //    window.location = '/login';
     //}

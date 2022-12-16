@@ -1,23 +1,52 @@
-﻿import axios from "axios";
-import addresses from "../../constants/addresses";
-import { ILogin } from "../../interfaces/user";
+﻿import { Actions } from "../../constants/actionTypes";
+import { IUser } from "../../interfaces/user";
+import { userService } from "../../services";
 
-const userActionTypes = {
-    Add: 'user_add',
-    Update: 'user_update',
-    Delete : 'user_delte',
-    GetAll : 'user_getall',
-    Login: 'user_login',
-    SignUp: 'user_signup',
+const AddUser = (user: IUser) => {
+    var result = userService.add(user);
+    return {
+        type: Actions.ADD_USER,
+        payload: result
+    }
 }
 
-export { userActionTypes }
-
-
-const Login = async (dataset: ILogin) => {
-    var result = await axios.get(`${addresses.Auth_login}/${dataset.username}/${dataset.password}`);
-    return result;
+const EditUser = (user: IUser) => {
+    var result = userService.edit(user);
+    return {
+        type: Actions.EDIT_USER,
+        payload: result
+    }
 }
 
 
+const RemoveUser = (id: number) => {
+    var result = userService.remove(id);
+    return {
+        type: Actions.DELETE_USER,
+        payload: result
+    }
+}
 
+const GetAllUser = (user: IUser) => {
+    var result = userService.getAll();
+    return {
+        type: Actions.GETALL_USER,
+        payload: result
+    }
+}
+
+const GetUserById = (id: number) => {
+    var result = userService.getById(id);
+    return {
+        type: Actions.GETBYID_USER,
+        payload: result
+    }
+}
+
+export {
+    AddUser,
+    EditUser,
+    RemoveUser,
+    GetAllUser,
+    GetUserById 
+}

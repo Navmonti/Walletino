@@ -2,31 +2,28 @@
 import axios from "../constants/network"
 import { IItem } from "../interfaces/item"
 
-const ItemService = () => {
-    const add = async (dataset: IItem) => {
-        var result = axios.post(`${addresses.Items_add}`, dataset);
+export default class ItemService {
+    static async add(dataset: IItem) {
+        const result = axios.post(`${addresses.Categories_add}`, dataset);
         return result;
     }
 
-    const edit = async (dataset: IItem) => {
-        var result = axios.put(`${addresses.Items_update}`, dataset);
+    static async edit(dataset: IItem) {
+        const result = axios.put(`${addresses.Categories_update}`, dataset);
         return result;
     }
 
-    const remove = async (id: number) => {
-        var result = axios.delete(`${addresses.Items_remove}/${id}`);
+    static async remove(id: number) {
+        var result = axios.delete(`${addresses.Categories_remove}/${id}`);
         return result;
     }
 
-    const getAll = async () => {
-        var result = axios.get(`${addresses.Items_add}`);
+    static async getAll() {
+        var result = axios.get(`${addresses.Categories_getAll}`);
         return result;
     }
-     
-    const getById = async (id: number) => {
-        var result = axios.get(`${addresses.Items_add}/${id}`);
+    static async getById(id: number) {
+        var result = axios.get(`${addresses.Categories_getById}/${id}`);
         return result;
     }
 }
-
-export default ItemService;

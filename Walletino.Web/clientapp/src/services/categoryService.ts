@@ -1,32 +1,30 @@
 ﻿import addresses from "../constants/addresses"
 import axios from "../constants/network"
-import { ICategory} from "../interfaces/category"
+import { ICategory } from "../interfaces/category"
 
-const CategoryService = () => {
-    const add = async (dataset: ICategory) => {
-        var result = axios.post(`${addresses.Categories_add}`, dataset);
+export default class CategoryService {
+    static async add(dataset: ICategory) {
+        const result = axios.post(`${addresses.Items_add}`, dataset);
         return result;
     }
 
-    const edit = async (dataset: ICategory) => {
-        var result = axios.put(`${addresses.Categories_update}`, dataset);
+    static async edit(dataset: ICategory) {
+        const result = axios.put(`${addresses.Items_update}`, dataset);
         return result;
     }
 
-    const remove = async (id: number) => {
-        var result = axios.delete(`${addresses.Categories_remove}/${id}`);
+    static async remove(id: number) {
+        var result = axios.delete(`${addresses.Items_remove}/${id}`);
         return result;
     }
 
-    const getAll = async () => {
-        var result = axios.get(`${addresses.Categories_add}`);
+    static async getAll() {
+        var result = axios.get(`${addresses.Items_getAll}`);
         return result;
     }
-
-    const getById = async (id: number) => {
-        var result = axios.get(`${addresses.Categories_add}/${id}`);
+    static async getById(id: number) {
+        var result = axios.get(`${addresses.Items_getById}/${id}`);
         return result;
     }
 }
 
-export default CategoryService;

@@ -2,31 +2,38 @@
 import axios from "../constants/network"
 import { IAccount } from "../interfaces/account"
 
-const AccountService = () => {
-    const add = async (dataset: IAccount) => {
-        var result = axios.post(`${addresses.Accounts_add}`, dataset);
+export default class AccountService {
+    static async add(dataset: IAccount) {
+        const result = axios.post(`${addresses.Accounts_add}`, dataset);
         return result;
     }
 
-    const edit = async (dataset: IAccount) => {
-        var result = axios.put(`${addresses.Accounts_update}`, dataset);
+    static async edit(dataset: IAccount) {
+        const result = axios.put(`${addresses.Accounts_update}`, dataset);
         return result;
     }
 
-    const remove = async (id:number) => {
+    static async remove(id: number) {
         var result = axios.delete(`${addresses.Accounts_remove}/${id}`);
+        debugger;
         return result;
     }
 
-    const getAll = async () => {
-        var result = axios.get(`${addresses.Accounts_add}`);
+    static async getAll() {
+        debugger
+        var result = await axios.get(`${addresses.Accounts_getAll}`);
+        debugger
         return result;
     }
-     
-    const getById = async (id: number) => {
-        var result = axios.get(`${addresses.Accounts_add}/${id}`);
+
+    static async getById(id: number) {
+        var result = axios.get(`${addresses.Accounts_getById}/${id}`);
+        return result;
+    }
+
+    static async getByUserId(userId: number) {
+        var result = axios.get(`${addresses.Transactions_getByAccountId}/${userId}`);
         return result;
     }
 }
 
-export default AccountService;

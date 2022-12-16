@@ -11,7 +11,7 @@ const addresses = {
     Accounts_add: `${config.apiAddress}/Accounts/Add`,
     Accounts_update: `${ config.apiAddress }/Accounts/Update`,
     Accounts_remove: `${config.apiAddress}/Accounts/Delete`,
-    Accounts_getAll: `${ config.apiAddress } /Accounts/GetAll`,
+    Accounts_getAll: `${ config.apiAddress}/Accounts/GetAll`,
     Accounts_getById: `${config.apiAddress}/Accounts/GetById`,
 
     //Categories APIs
@@ -34,13 +34,15 @@ const addresses = {
     Transactions_remove: `${config.apiAddress}/Transactions/Delete`,
     Transactions_getAll: `${config.apiAddress}/Transactions/GetAll`,
     Transactions_getById: `${config.apiAddress}/Transactions/GetById`,
+    Transactions_getByAccountId: `${config.apiAddress}/Transactions/GetByAccountId`,
 
     //Users APIs
     Users_add: `${config.apiAddress}/Users/Add`,
     Users_update: `${config.apiAddress}/Users/Update`,
     Users_remove: `${config.apiAddress}/Users/Delete`,
     Users_getAll: `${config.apiAddress}/Users/GetAll`,
-    Users_getById: `${config.apiAddress}/Users/GetById`,
+    Users_getById: `${config.apiAddress}/Users/GetById`, 
+    Users_getByUserId: `${config.apiAddress}/Users/GetByUserId`, 
 }
 
 export default addresses

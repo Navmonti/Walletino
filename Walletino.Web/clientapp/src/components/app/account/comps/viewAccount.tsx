@@ -1,11 +1,18 @@
-﻿import React from 'react'
+﻿import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { GetAllAccount } from '../../../../redux/action/accountActions';
 
 import './accountStyle.css'
 
 const ViewAccount = () => {
     const navigation = useNavigate();
-
+    const dispatch = useDispatch();
+    const state = useSelector(state => state);
+    debugger;
+    useEffect(() => {
+        GetAllAccount();
+    }, [])
     return (
         <>
             <div className="add-account" onClick={() => { navigation(`/account/addAccount`) }}>

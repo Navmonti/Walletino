@@ -31,7 +31,7 @@ namespace Walletino.Controllers
         [HttpGet("id")]
         public async Task<IActionResult> GetById(int transactionId) => Ok(await _transactionService.GetById(transactionId));
 
-        [HttpGet("id")]
+        [HttpGet("accountId")]
         public async Task<IActionResult> GetByAccountId(int accountId) => Ok(await _transactionService.GetByAccountId(accountId));
     }
 }

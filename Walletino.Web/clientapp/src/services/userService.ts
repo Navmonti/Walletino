@@ -1,32 +1,36 @@
-﻿import axios from "../constants/network"
-import addresses from "../constants/addresses"
+﻿import addresses from "../constants/addresses"
+import axios from "../constants/network"
 import { IUser } from "../interfaces/user"
 
-const UserService = () => {
-    const add = async (dataset: IUser) => {
-        var result = axios.post(`${addresses.Users_add}`, dataset);
+export default class UserService {
+    static async add(dataset: IUser) {
+        const result = axios.post(`${addresses.Users_add}`, dataset);
         return result;
     }
 
-    const edit = async (dataset: IUser) => {
-        var result = axios.put(`${addresses.Users_update}`, dataset);
+    static async edit(dataset: IUser) {
+        const result = axios.put(`${addresses.Users_update}`, dataset);
         return result;
     }
 
-    const remove = async (id: number) => {
+    static async remove(id: number) {
         var result = axios.delete(`${addresses.Users_remove}/${id}`);
         return result;
     }
 
-    const getAll = async () => {
-        var result = axios.get(`${addresses.Users_add}`);
+    static async getAll() {
+        var result = axios.get(`${addresses.Users_getAll}`);
         return result;
     }
 
-    const getById = async (id: number) => {
-        var result = axios.get(`${addresses.Users_add}/${id}`);
+    static async getById(id: number) {
+        var result = axios.get(`${addresses.Users_getById}/${id}`);
+        return result;
+    }
+
+    static async getByUserId(userId: number) {
+        var result = axios.get(`${addresses.Users_getById}/${userId}`);
         return result;
     }
 }
 
-export default UserService;

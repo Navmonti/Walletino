@@ -2,31 +2,34 @@
 import axios from "../constants/network"
 import { ITransaction } from "../interfaces/transaction"
 
-const TransactionService = () => {
-    const add = async (dataset: ITransaction) => {
-        var result = axios.post(`${addresses.Transactions_add}`, dataset);
+export default class TransactionService {
+    static async add(dataset: ITransaction) {
+        const result = axios.post(`${addresses.Transactions_add}`, dataset);
         return result;
     }
 
-    const edit = async (dataset: ITransaction) => {
-        var result = axios.put(`${addresses.Transactions_update}`, dataset);
+    static async edit(dataset: ITransaction) {
+        const result = axios.put(`${addresses.Transactions_update}`, dataset);
         return result;
     }
 
-    const remove = async (id: number) => {
+    static async remove(id: number) {
         var result = axios.delete(`${addresses.Transactions_remove}/${id}`);
         return result;
     }
 
-    const getAll = async () => {
-        var result = axios.get(`${addresses.Transactions_add}`);
+    static async getAll() {
+        var result = axios.get(`${addresses.Transactions_getAll}`);
         return result;
     }
 
-    const getById = async (id: number) => {
-        var result = axios.get(`${addresses.Transactions_add}/${id}`);
+    static async getById(id: number) {
+        var result = axios.get(`${addresses.Transactions_getById}/${id}`);
+        return result;
+    }
+
+    static async getByAccountId(accountId: number) {
+        var result = axios.get(`${addresses.Transactions_getById}/${accountId}`);
         return result;
     }
 }
-
-export default TransactionService;
