@@ -1,57 +1,65 @@
 ﻿import { createSlice } from '@reduxjs/toolkit'
-import type { PayloadAction } from '@reduxjs/toolkit' 
 import { IAccount } from '../../interfaces/account'
 import { sliceNames } from '../../constants/file'
+import { addAccountAsync, deleteAccountAsync, editAccountAsync, getAccountByUserIdAsync } from '../action/accountAction'
 
 const initialState: IAccount = {
     accountId: 0,
-    accountNumber: 'dasdadasdas',
-    accountTitle: 'asdadadasd'
+    accountTitle: 'accountTitle',
+    accountNumber: 'accountNumber',
+    isLoading: false,
+    isDisable: false,
+    isSuccessful: false,
+    succeessfulMessage: '',
+    isError: false,
+    errorMessage: ''
 }
 
 export const accountSlice = createSlice({
     name: sliceNames.account,
     initialState,
-    reducers: {}
-})
+    reducers: { },
+    extraReducers: (builder) => {
+        builder.addCase(addAccountAsync.pending, (state: IAccount, { payload }) => {
 
-console.log(accountSlice);
+        });
+        builder.addCase(addAccountAsync.fulfilled, (state: IAccount, { payload }) => {
 
-export default accountSlice.reducer
-//export const { addAccount, editAccount, deleteAccount } = accountSlice.actions;
+        });
+        builder.addCase(addAccountAsync.rejected, (state: any, { payload }) => {
 
+        });
 
+        builder.addCase(editAccountAsync.pending, (state: IAccount, { payload }) => {
 
+        });
+        builder.addCase(editAccountAsync.fulfilled, (state: IAccount, { payload }) => {
 
+        });
+        builder.addCase(editAccountAsync.rejected, (state: any, { payload }) => {
 
+        });
 
+        builder.addCase(deleteAccountAsync.pending, (state: IAccount, { payload }) => {
 
+        });
+        builder.addCase(deleteAccountAsync.fulfilled, (state: IAccount, { payload }) => {
 
+        });
+        builder.addCase(deleteAccountAsync.rejected, (state: any, { payload }) => {
 
+        });
 
+        builder.addCase(getAccountByUserIdAsync.pending, (state: any, { payload }) => {
 
+        });
+        builder.addCase(getAccountByUserIdAsync.fulfilled, (state: any, { payload }) => {
 
+        });
+        builder.addCase(getAccountByUserIdAsync.rejected, (state: any, { payload }) => {
 
+        });
+    }
+}) 
 
-
-
-
-
-//addAccount: (state, action: PayloadAction<any>) => {
-//    state.accountId = action.payload.accountId,
-//        state.accountNumber = action.payload.accountNumber,
-//        state.accountTitle = action.payload.accountTitle
-
-//},
-//    editAccount: (state, action: PayloadAction<any>) => {
-//        state.accountId = action.payload.accountId,
-//            state.accountNumber = action.payload.accountNumber,
-//            state.accountTitle = action.payload.accountTitle
-
-//    },
-//        deleteAccount: (state, action: PayloadAction<any>) => {
-//            state.accountId = action.payload.accountId,
-//                state.accountNumber = action.payload.accountNumber,
-//                state.accountTitle = action.payload.accountTitle
-
-//        }
+export default accountSlice.reducer;

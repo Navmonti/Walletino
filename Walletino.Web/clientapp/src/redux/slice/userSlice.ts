@@ -10,7 +10,13 @@ const initialState: IUser = {
     username: '',
     password: '',
     mobile: '',
-    email: ''
+    email: '',
+    isLoading: false,
+    isDisable: false,
+    isSuccessful: false,
+    succeessfulMessage: '',
+    isError: false,
+    errorMessage: ''
 }
 
 export const userSlice = createSlice({

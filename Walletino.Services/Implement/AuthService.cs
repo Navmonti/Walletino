@@ -70,8 +70,6 @@ namespace Walletino.Services.Implement
             {
                 throw ex;
             }
-
-
         }
 
         public async Task<string> GenerateToken(int userId)

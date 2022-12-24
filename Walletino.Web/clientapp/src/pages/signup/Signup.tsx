@@ -1,14 +1,17 @@
-﻿import React, { useState } from 'react';
+﻿import { stat } from 'fs';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Button, Input } from '../../components/uikit';
+import { useAppDispatch } from '../../hooks/useAppDispatch';
  
-import { ISignup } from '../../interfaces/user';
-import { signupAction } from './../../redux/slice/signupSlice'
+import { ILogin, ISignup } from '../../interfaces/user'; 
+import { signupAsync } from '../../redux/action/authAction';
 import './signup.css'
 
 const Signup = () => {
-    //const signup = useAppSelector((state) => state.signup)
-    //const dispatch = useAppDispatch();
+
+    const dispatch = useAppDispatch();
+    const login = useSelector((state: ILogin) => state) 
 
     //variable
     const [firstname, setFirstname] = useState("")
@@ -21,9 +24,10 @@ const Signup = () => {
     //inputs
     type variableTypes = "firstname" | "lastname" | "email" | "username" | "password" | "confirmPassword"
 
+
+    //actions
     const _handleOnChange = (event: any, type: variableTypes) => {
-        var value = event.target.value;
-        debugger;
+        var value = event.target.value; 
         switch (type) {
             case 'firstname':
                 setFirstname(value)
@@ -46,21 +50,17 @@ const Signup = () => {
         }
     }
     
-    const user = useSelector((state:any)=> state.signup)
     const _handleOnClick = () => {
-        //const dataSet: ISignup = {
-        //    firstname: firstname,
-        //    lastname: lastname,
-        //    email: email,
-        //    username: username,
-        //    password: password,
-        //    confirmPassword: confirmPassword
-        //}
-        debugger;
-        /*dispatch(signupAction({ firstname }))*/
-        console.log(user)
+        const dataSet: ISignup = {
+            firstname: firstname,
+            lastname: lastname,
+            email: email,
+            username: username,
+            password: password,
+            confirmPassword: confirmPassword, 
+        }
 
-  
+        dispatch(signupAsync(dataSet)) 
     }
 
     return <div className="container">
@@ -96,8 +96,7 @@ const Signup = () => {
                     </div>
                     <div className="card-footer">
                         <div className="button-holder">
-                            {/*<Button type={'default'} title={'Sign Up'} loading={false} disable={false} icon={''} onClick={() => _handleOnClick()} />*/}
-                            <button onClick={() => _handleOnClick()}></button>
+                            <button onClick={() => _handleOnClick()}>Sign Up</button>
                         </div>
                     </div>
                 </div>

@@ -1,18 +1,19 @@
 ﻿import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom'; 
+import { useAppDispatch } from '../../../../hooks/useAppDispatch';
 import { IAccount } from '../../../../interfaces/account';
-import { GetAllAccount } from '../../../../redux/action/accountActions';
+import getallAccountAsync from "../../../../redux/slice/accountSlice"
 
 import './accountStyle.css'
 
 const ViewAccount = () => {
     const navigation = useNavigate();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const account = useSelector((state: IAccount) => state);
 
     useEffect(() => {
-        GetAllAccount();
+        //dispatch(getallAccountAsync(1))
     }, [])
     return (
         <>

@@ -1,16 +1,18 @@
-﻿//import accountSlice from '../slice/accountSlice';
-//import categorySlice from '../slice/categorySlice';
-//import itemSlice from '../slice/itemSlice'
-//import signupSlice from '../slice/signupSlice';
-//import transactionSlice from '../slice/transactionSlice'
-//import userSlice from '../slice/userSlice'
+﻿import accountReducer from '../slice/accountSlice';
+import categoryReducer from '../slice/categorySlice';
+import itemReducer from '../slice/itemSlice'
+import signupReducer from '../slice/signupSlice';
+import transactionReducer from '../slice/transactionSlice'
+import userReducer from '../slice/userSlice';
+import loginReducer from '../slice/loginSlice';
 
-//export {
-//    accountSlice,
-//    categorySlice,
-//    itemSlice,
-//    signupSlice,
-//    transactionSlice,
-//    userSlice
-//}
-export { }
+export {
+    accountReducer,
+    categoryReducer,
+    itemReducer,
+    transactionReducer,
+    userReducer,
+    loginReducer,
+    signupReducer
+}
+ 

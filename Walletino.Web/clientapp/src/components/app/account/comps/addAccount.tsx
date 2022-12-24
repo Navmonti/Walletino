@@ -1,8 +1,17 @@
-﻿import React from 'react'
+﻿import React, { useState } from 'react'
+import { useSelector } from 'react-redux';
+import { useAppDispatch } from '../../../../hooks/useAppDispatch';
 import { Button } from '../../../uikit';
 import './accountStyle.css'
 
 const AddAccount = () => {
+    const dispatch = useAppDispatch();
+    const [accountTitle, setAccountTitle] = useState('');
+    const [accountNumber, setAccountNumber] = useState('');
+
+     
+
+
     return <div className="container page-content">
         <div className="row">
             <div className="col-md-12">
@@ -12,9 +21,8 @@ const AddAccount = () => {
                     </div>
                     <hr className="sperator" />
                     <div className="content-body">
-                        <input type="text" placeholder="username" className="input" />
-                        <input type="password" placeholder="password" className="input" />
-                        <input type="password" placeholder="confirm password" className="input" />
+                        <input type="text" placeholder="accountTitle" className="input" />
+                        <input type="text" placeholder="accountNumber" className="input" />
                         <Button type={'default'} title={'SignUp'} loading={false} disable={false} icon={''} onClick={function() {
                             throw new Error('Function not implemented.');
                         } } />

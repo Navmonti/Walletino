@@ -17,7 +17,7 @@ namespace Walletino.DataAccess.Repository
         }
         public async Task<User> GetUserByUsernameAndPassword(string username, string password)
         {
-           var x =  await _entity.Include("Items").FirstOrDefaultAsync(x => x.Username == username && x.Password == password);
+           var x =  await _entity.FirstOrDefaultAsync(x => x.Username == username && x.Password == password);
             return x;
         }
 

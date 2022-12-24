@@ -14,13 +14,13 @@ export default class AccountService {
     }
 
     static async remove(id: number) {
-        var result = axios.delete(`${addresses.Accounts_remove}/${id}`);
-        debugger;
+        var result = axios.delete(`${addresses.Accounts_remove}/${id}`); 
         return result;
     }
 
     static async getAll() {
         var result = await axios.get(`${addresses.Accounts_getAll}`);
+        debugger;
         return result;
     }
 

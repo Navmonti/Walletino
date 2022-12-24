@@ -1,22 +1,15 @@
 ﻿import { configureStore } from '@reduxjs/toolkit';
-import { categoryReducer, itemReducer, transactionReducer, userReducer } from '../reducer';
-import accountReducer from '../slice/accountSlice'
+import { accountReducer, loginReducer, signupReducer } from '../slice';
+
 export const store = configureStore({
     reducer: {
         account: accountReducer,
-        category: categoryReducer,
-        item: itemReducer,
-        transaction: transactionReducer,
-        user: userReducer
+        login: loginReducer,
+        signup: signupReducer
     }
 })
-
-
-
-
-
-
-
+ 
+export type AppDispatch = typeof store.dispatch;
 
 
 

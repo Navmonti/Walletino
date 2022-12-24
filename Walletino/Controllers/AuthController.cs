@@ -6,7 +6,7 @@ using Walletino.Services.Interface;
 
 namespace Walletino.Controllers
 {
-    [Route("api/[controller]/[action]")]
+    [Route("[controller]/[action]")]
     [ApiController]
     public class AuthController : ControllerBase
     {
@@ -16,10 +16,10 @@ namespace Walletino.Controllers
             _authService = authService;
         }
 
-        [HttpGet]
-        public async Task<IActionResult> Login(string username, string Password)
+        [HttpGet("{username}/{password}")]
+        public async Task<IActionResult> Login(string username, string password)
         {
-            return Ok(await _authService.LoginAsync(username, Password));
+            return Ok(await _authService.LoginAsync(username, password));
         }
 
         [HttpPost]

@@ -8,14 +8,14 @@ interface IUser {
     mobile: string,
     email: string,
 
-    //isLoading: false,
-    //isDisable: false,
+    isLoading: false,
+    isDisable: false,
 
-    //isSuccessful: false,
-    //succeessfulMessage: '',
+    isSuccessful: false,
+    succeessfulMessage: '',
 
-    //isError: false,
-    //errorMessage: '',
+    isError: false,
+    errorMessage: '',
 }
 
 export default IUser;

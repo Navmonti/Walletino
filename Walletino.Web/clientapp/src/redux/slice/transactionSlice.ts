@@ -7,38 +7,24 @@ const initialState: ITransaction = {
     transactionId: 0,
     itemId: 0,
     Type: 'Deposit',
-    value: ''
+    value: '',
+    isLoading: false,
+    isDisable: false,
+    isSuccessful: false,
+    succeessfulMessage: '',
+    isError: false,
+    errorMessage: ''
 }
 
 export const transactionSlice = createSlice({
     name: sliceNames.transaction,
     initialState,
     reducers: {
-        //addTransaction: (state, action: PayloadAction<any>) => {
-        //    state.transactionId = action.payload.transactionId,
-        //        state.itemId = action.payload.itemId,
-        //        state.Type = action.payload.type,
-        //        state.value = action.payload.value
-
-        //},
-        //editTransaction: (state, action: PayloadAction<any>) => {
-        //    state.transactionId = action.payload.transactionId,
-        //        state.itemId = action.payload.itemId,
-        //        state.Type = action.payload.type,
-        //        state.value = action.payload.value
-
-        //},
-        //deleteTransaction: (state, action: PayloadAction<any>) => {
-        //    state.transactionId = action.payload.transactionId,
-        //        state.itemId = action.payload.itemId,
-        //        state.Type = action.payload.type,
-        //        state.value = action.payload.value
-        //}
+        
     },
     extraReducers: {
 
     }
 }) 
 
-//export const { addTransaction, editTransaction, deleteTransaction } = transactionSlice.actions;
 export default transactionSlice.reducer

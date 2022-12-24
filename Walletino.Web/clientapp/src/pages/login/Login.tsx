@@ -1,13 +1,16 @@
 ﻿import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { Button , Input } from '../../components/uikit';
-import AuthService from '../../services/authService';
+import { useAppDispatch } from '../../hooks/useAppDispatch';
+import { ILogin } from '../../interfaces/user';
+import { loginAsync } from '../../redux/action/authAction';
 import './login.css' 
 
 const Login = () => {
+    const navigation = useNavigate();
 
     //hooks
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     //variable
     const [username, setUsername] = useState("")
@@ -17,7 +20,8 @@ const Login = () => {
     type variableTypes = "username" | "password"
 
     const _handleOnChange = (event: any, type: variableTypes) => {
-        var value = event.current;
+        debugger;
+        var value = event.target.value;
         switch (type) {
             case 'username':
                 setUsername(value)
@@ -29,11 +33,17 @@ const Login = () => {
     }
 
     const _handleLoginOnClick = async () => {
-
+        debugger;
+        var dataset: ILogin = {
+            username: username,
+            password: password,
+            token: ''
+        }
+        dispatch(loginAsync(dataset))
     }
 
     const _handleSignUpOnClick = async () => {
-         
+        navigation(`/signup`)
     }
 
     return <div className="container page-content">
@@ -46,13 +56,13 @@ const Login = () => {
                     <div className="card-content">
                         <hr className="sperator" />
                         <Input placeholder={'Please Enter Username'} title={'Username'} disable={false} required={true} description={''} type={'text'} theme={'light'} onChange={(event: any) => _handleOnChange(event, "username")} key={"username"}/>
-                        <Input placeholder={'Please Enter Password'} title={'Password'} disable={false} required={true} description={''} type={'password'} theme={'light'} onChange={(event: any) => _handleOnChange(event, "password")} key={"password"}/>
-                        <Button onClick={() => _handleLoginOnClick()} type={'default'} title={'Login'} loading={false} disable={false} icon={''} />
+                        <Input placeholder={'Please Enter Password'} title={'Password'} disable={false} required={true} description={''} type={'password'} theme={'light'} onChange={(event: any) => _handleOnChange(event, "password")} key={"password"} />
+                        <button onClick={() => _handleLoginOnClick()}>Login</button>
                         <hr className="sperator" />
                     </div>
                     <div className="card-footer">
                         <div className="signup-holder">
-                            <Button onClick={() => _handleSignUpOnClick()} type={'default'} title={'Sign Up'} loading={false} disable={false} icon={''} />
+                            <button onClick={() => _handleSignUpOnClick()}>SignUp</button>
                             <p>Or</p>
                             <div className="social-holder">
                                 <div className="social-icon"></div>
