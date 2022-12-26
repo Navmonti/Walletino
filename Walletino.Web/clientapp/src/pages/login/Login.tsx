@@ -1,14 +1,17 @@
 ﻿import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { Button , Input } from '../../components/uikit';
 import { useAppDispatch } from '../../hooks/useAppDispatch';
+import { useAppSelector } from '../../hooks/useAppSelector';
 import { ILogin } from '../../interfaces/user';
 import { loginAsync } from '../../redux/action/authAction';
 import './login.css' 
 
 const Login = () => {
     const navigation = useNavigate();
-
+    const token = useAppSelector((state) => state.login.token)
+     
     //hooks
     const dispatch = useAppDispatch();
 
@@ -20,7 +23,6 @@ const Login = () => {
     type variableTypes = "username" | "password"
 
     const _handleOnChange = (event: any, type: variableTypes) => {
-        debugger;
         var value = event.target.value;
         switch (type) {
             case 'username':
@@ -33,13 +35,14 @@ const Login = () => {
     }
 
     const _handleLoginOnClick = async () => {
-        debugger;
         var dataset: ILogin = {
             username: username,
             password: password,
             token: ''
         }
         dispatch(loginAsync(dataset))
+        localStorage.setItem("token", token);
+        navigation(`/account`)
     }
 
     const _handleSignUpOnClick = async () => {

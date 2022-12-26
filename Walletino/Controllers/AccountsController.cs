@@ -6,7 +6,7 @@ using Walletino.Services.Interface;
 
 namespace Walletino.Controllers
 {
-    //[Authentication]
+    [Authentication]
     [Route("[controller]/[action]")]
     public class AccountsController : ControllerBase
     {

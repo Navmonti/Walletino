@@ -2,7 +2,9 @@
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom'; 
 import { useAppDispatch } from '../../../../hooks/useAppDispatch';
+import { useAppSelector } from '../../../../hooks/useAppSelector';
 import { IAccount } from '../../../../interfaces/account';
+import { getAccountByUserIdAsync } from '../../../../redux/action/accountAction';
 import getallAccountAsync from "../../../../redux/slice/accountSlice"
 
 import './accountStyle.css'
@@ -10,10 +12,10 @@ import './accountStyle.css'
 const ViewAccount = () => {
     const navigation = useNavigate();
     const dispatch = useAppDispatch();
-    const account = useSelector((state: IAccount) => state);
+    const account = useAppSelector((state) => state.account);
 
     useEffect(() => {
-        //dispatch(getallAccountAsync(1))
+        dispatch(getAccountByUserIdAsync(3))
     }, [])
     return (
         <>

@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Walletino.Core.Repository;
 using Walletino.DataAccess.Database;
@@ -15,9 +16,9 @@ namespace Walletino.DataAccess.Repository
             _context = context;
             _entity = context.Set<Account>();
         }
-        public async Task<Account> GetByUserId(int userId)
+        public async Task<IEnumerable<Account>> GetByUserId(int userId)
         {
-            return await _entity.FirstOrDefaultAsync(x => x.UserId == userId);
+            return await _context.Accounts.ToListAsync();
         }
     }
 }

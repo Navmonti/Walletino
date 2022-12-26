@@ -15,11 +15,10 @@ namespace Walletino.DataAccess.Repository
             _context = context;
             _entity = context.Set<User>();
         }
+
         public async Task<User> GetUserByUsernameAndPassword(string username, string password)
-        {
-           var x =  await _entity.FirstOrDefaultAsync(x => x.Username == username && x.Password == password);
-            return x;
-        }
+            => await _entity.FirstOrDefaultAsync(x => x.Username == username && x.Password == password);
+         
 
         public async Task<User> GetUserByUserId(int userId)
             => await _entity.FirstOrDefaultAsync(x => x.UserId == userId);

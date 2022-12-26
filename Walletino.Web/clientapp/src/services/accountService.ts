@@ -20,7 +20,6 @@ export default class AccountService {
 
     static async getAll() {
         var result = await axios.get(`${addresses.Accounts_getAll}`);
-        debugger;
         return result;
     }
 

@@ -4,9 +4,7 @@ import { authService } from '../../services';
 
 export const loginAsync = createAsyncThunk('auth/login', async (data: ILogin, { rejectWithValue }) => {
     try {
-        debugger;
-        var response = authService.login(data);
-        return response;
+        return await authService.login(data);
     } catch (err: any) {
         return rejectWithValue(err.response.data)
     }
@@ -15,9 +13,7 @@ export const loginAsync = createAsyncThunk('auth/login', async (data: ILogin, { 
 
 export const signupAsync = createAsyncThunk('auth/signup', async (data: ISignup, { rejectWithValue }) => {
     try {
-        debugger;
-        var response = authService.signup(data);
-        return response;
+        return  await authService.signup(data);
     } catch (err: any) {
         return rejectWithValue(err.response.data)
     }

@@ -51,13 +51,13 @@ export const accountSlice = createSlice({
         });
 
         builder.addCase(getAccountByUserIdAsync.pending, (state: any, { payload }) => {
-
+            debugger;
         });
         builder.addCase(getAccountByUserIdAsync.fulfilled, (state: any, { payload }) => {
-
+            debugger;
         });
         builder.addCase(getAccountByUserIdAsync.rejected, (state: any, { payload }) => {
-
+            debugger;
         });
     }
 }) 

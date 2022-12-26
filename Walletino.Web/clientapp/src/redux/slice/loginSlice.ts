@@ -15,14 +15,11 @@ export const loginSlice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         builder.addCase(loginAsync.pending, (state: ILogin, { payload }) => {
-
         });
         builder.addCase(loginAsync.fulfilled, (state: ILogin, { payload }) => {
-            debugger;
-            //window.localStorage.setItem('token', JSON.stringify(payload.token));
+            state.token = payload.data;
         });
         builder.addCase(loginAsync.rejected, (state: any, { payload }) => {
-
         });
     }
 })
