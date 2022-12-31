@@ -1,11 +1,8 @@
-﻿import React, { useEffect } from 'react'
-import { useSelector } from 'react-redux';
+﻿import React, { useEffect } from 'react' 
 import { useNavigate } from 'react-router-dom'; 
 import { useAppDispatch } from '../../../../hooks/useAppDispatch';
 import { useAppSelector } from '../../../../hooks/useAppSelector';
-import { IAccount } from '../../../../interfaces/account';
 import { getAccountByUserIdAsync } from '../../../../redux/action/accountAction';
-import getallAccountAsync from "../../../../redux/slice/accountSlice"
 
 import './accountStyle.css'
 

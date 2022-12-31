@@ -16,6 +16,7 @@ namespace Walletino.DataAccess.Repository
             _context = context;
             _entity = context.Set<Account>();
         }
+
         public async Task<IEnumerable<Account>> GetByUserId(int userId)
         {
             return await _context.Accounts.ToListAsync();

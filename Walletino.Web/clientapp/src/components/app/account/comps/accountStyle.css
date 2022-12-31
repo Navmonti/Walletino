@@ -70,7 +70,7 @@
 .sperator {
     border: 1px solid #808080;
     width: 100%;
-}
+}*/
 
 
 .account-card {
@@ -79,4 +79,8 @@
     text-align: left;
     padding: 20px;
     border: 2px solid #c9b2b2;
-}*/
+}
+
+.add-account {
+
+}
