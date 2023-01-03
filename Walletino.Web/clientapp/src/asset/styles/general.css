@@ -2,8 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    align-content: center;
-    height: calc(100vh - 70px);
+    align-content: center; 
 }
 
 .sperator {

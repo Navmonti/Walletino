@@ -40,7 +40,7 @@ export const getallAccountAsync = createAsyncThunk('account/getall', async (acco
 })
 
 export const getAccountByUserIdAsync = createAsyncThunk('account/getAccountByUserId', async (userId: number, { rejectWithValue }) => {
-    try {
+    try { 
         var response = await accountService.getByUserId(userId);
         return response;
     } catch (err: any) {

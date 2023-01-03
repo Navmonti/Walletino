@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Walletino.Core.Repository;
 using Walletino.DataAccess.Database;
@@ -19,7 +20,7 @@ namespace Walletino.DataAccess.Repository
 
         public async Task<IEnumerable<Account>> GetByUserId(int userId)
         {
-            return await _context.Accounts.ToListAsync();
+            return await _context.Accounts.Where(x => x.UserId == userId).ToListAsync();
         }
     }
 }

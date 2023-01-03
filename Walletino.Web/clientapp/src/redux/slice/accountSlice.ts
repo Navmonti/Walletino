@@ -12,7 +12,8 @@ const initialState: IAccount = {
     isSuccessful: false,
     succeessfulMessage: '',
     isError: false,
-    errorMessage: ''
+    errorMessage: '',
+    accounts : []
 }
 
 export const accountSlice = createSlice({
@@ -43,21 +44,18 @@ export const accountSlice = createSlice({
         builder.addCase(deleteAccountAsync.pending, (state: IAccount, { payload }) => {
 
         });
-        builder.addCase(deleteAccountAsync.fulfilled, (state: IAccount, { payload }) => {
-
+        builder.addCase(deleteAccountAsync.fulfilled, (state: any, { payload }) => {
         });
         builder.addCase(deleteAccountAsync.rejected, (state: any, { payload }) => {
 
         });
 
         builder.addCase(getAccountByUserIdAsync.pending, (state: any, { payload }) => {
-            debugger;
         });
-        builder.addCase(getAccountByUserIdAsync.fulfilled, (state: any, { payload }) => {
-            debugger;
+        builder.addCase(getAccountByUserIdAsync.fulfilled, (state: IAccount, { payload }) => {
+            state.accounts = payload.data.result;
         });
         builder.addCase(getAccountByUserIdAsync.rejected, (state: any, { payload }) => {
-            debugger;
         });
     }
 }) 

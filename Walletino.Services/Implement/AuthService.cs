@@ -58,7 +58,11 @@ namespace Walletino.Services.Implement
                     Firstname = model.Firstname,
                     Gender = model.Gender,
                     UserId = model.UserId,
-                    Password = GetStringSha256Hash(model.Password)
+                    Password = GetStringSha256Hash(model.Password),
+                    //ModifiedDate = DateTime.Now,
+                    //ModifiedBy = ,
+                    //CreateDate = DateTime.Now,,
+                    //CreateBy,
                 };
 
                 _unitOfWork.UserRepo.Add(user);

@@ -41,6 +41,7 @@ const Login = () => {
             token: ''
         }
         dispatch(loginAsync(dataset))
+        console.log("token " + token)
         localStorage.setItem("token", token);
         navigation(`/account`)
     }

@@ -13,6 +13,7 @@ const addresses = {
     Accounts_remove: `${config.apiAddress}/Accounts/Delete`,
     Accounts_getAll: `${ config.apiAddress}/Accounts/GetAll`,
     Accounts_getById: `${config.apiAddress}/Accounts/GetById`,
+    Accounts_getByUserId: `${config.apiAddress}/Accounts/GetByUserId`,
 
     //Categories APIs
     Categories_add: `${config.apiAddress}/Categories/Add`,

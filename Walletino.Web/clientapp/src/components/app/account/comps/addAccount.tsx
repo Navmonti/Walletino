@@ -6,11 +6,32 @@ import './accountStyle.css'
 
 const AddAccount = () => {
     const dispatch = useAppDispatch();
+
+    //variable
     const [accountTitle, setAccountTitle] = useState('');
-    const [accountNumber, setAccountNumber] = useState('');
+    const [accountNumber, setAccountNumber] = useState(''); 
 
-     
+    //inputs
+    type variableTypes = "accountTitle" | "accountNumber" 
 
+
+
+    //actions
+    const _handleOnChange = (event: any, type: variableTypes) => {
+        var value = event.target.value;
+        switch (type) {
+            case 'accountTitle':
+                setAccountTitle(value)
+                break;
+            case 'accountNumber':
+                setAccountNumber(value)
+                break;
+        }
+    }
+
+    const _handleSubmit = (event: any, type: variableTypes) => {
+         
+    }
 
     return <div className="container page-content">
         <div className="row">
@@ -21,11 +42,9 @@ const AddAccount = () => {
                     </div>
                     <hr className="sperator" />
                     <div className="content-body">
-                        <input type="text" placeholder="accountTitle" className="input" />
-                        <input type="text" placeholder="accountNumber" className="input" />
-                        <Button type={'default'} title={'SignUp'} loading={false} disable={false} icon={''} onClick={function() {
-                            throw new Error('Function not implemented.');
-                        } } />
+                        <input type="text" placeholder="accountTitle" className="input" onChange={(event: any) => _handleOnChange(event, "accountTitle")} />
+                        <input type="text" placeholder="accountNumber" className="input" onChange={(event: any) => _handleOnChange(event, "accountNumber")}/>
+                        <button onClick={() => _handleLoginOnClick()}>Login</button>
                     </div>
                 </div>
             </div>

@@ -11,6 +11,14 @@ namespace Walletino.DataAccess.Database
 
         }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+        }
+
         public DbSet<Account> Accounts { get; set; }    
         public DbSet<Category>  Categories { get; set; }    
         public DbSet<Item> Items { get; set; }    

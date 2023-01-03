@@ -2,7 +2,7 @@
     accountId: number;
     accountNumber: string;
     accountTitle: string;
-
+    
     isLoading: false,
     isDisable: false,
 
@@ -11,6 +11,8 @@
 
     isError: false,
     errorMessage: '',
+
+    accounts : []
 }
 
 export default IAccount;

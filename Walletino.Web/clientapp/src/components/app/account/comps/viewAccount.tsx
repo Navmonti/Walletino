@@ -9,8 +9,8 @@ import './accountStyle.css'
 const ViewAccount = () => {
     const navigation = useNavigate();
     const dispatch = useAppDispatch();
-    const account = useAppSelector((state) => state.account);
-
+    const accounts = useAppSelector((state) => state.account.accounts);
+    console.log(accounts)
     useEffect(() => {
         dispatch(getAccountByUserIdAsync(3))
     }, [])
@@ -19,19 +19,26 @@ const ViewAccount = () => {
             <div className="add-account" onClick={() => { navigation(`/account/addAccount`) }}>
                 <span className="plus">+</span>
             </div>
-            <div className="accounts">
-                <div className="account-card">
-                    <div className="row-item">
-                        <span>Title</span> : <span>Credit Bank</span>
-                    </div>
-                    <div className="row-item">
-                        <span>Number</span> : <span>235-33693-3655</span>
-                    </div>
-                    <div className="row-item">
-                        <span>Amount</span> : <span>15000$</span>
-                    </div>
-                </div> 
-            </div>
+            {
+                accounts.length > 0 ?
+                    accounts.map((item,index) => {
+                        <div key={index} className="accounts">
+                            <div className="account-card">
+                                <div className="row-item">
+                                    <span>Title</span> : <span>item.accountName</span>
+                                </div>
+                                <div className="row-item">
+                                    <span>Number</span> : <span>item.accountNumber</span>
+                                </div>
+                                <div className="row-item">
+                                    <span>Amount</span> : <span>15000$</span>
+                                </div>
+                            </div>
+                        </div>
+})
+                    : <h1>Account Not Exist</h1>
+            }
+            
         </>
     )
 
